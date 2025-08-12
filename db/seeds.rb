@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require "faker"
+# TODO: Write a seed to insert 100 posts in the database
+
+10.times do
+  article = Article.new(
+    title: Faker::JapaneseMedia::SwordArtOnline.real_name,
+    content: Faker::JapaneseMedia::SwordArtOnline.item
+  )
+  article.save!
+end
